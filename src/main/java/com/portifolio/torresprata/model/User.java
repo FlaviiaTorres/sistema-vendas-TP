@@ -7,6 +7,8 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import java.io.Serializable;
 
+@NamedQuery(name = "User.findByEmailId", query = "select u from User u where u.email=: email" )
+
 @Data
 @Entity
 @DynamicUpdate
@@ -24,8 +26,8 @@ public class User implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "numero")
-    private String numero;
+    @Column(name = "telefone")
+    private String telefone;
 
     @Column(name = "email")
     private String email;
